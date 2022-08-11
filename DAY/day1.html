@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="counter">
+        <!-- Vue语法，告诉vue 双大括号里面放了一个变量 -->
+        <span>{{num}}</span>
+        <span>{{uname}}</span>
+    </div>
+    <script>
+        const Counter = {
+            data:function(){//配置对象 Data是固定的
+                return {
+                    num:0,
+                    uname:"张三"
+                }
+            }
+        }
+        //mount挂载 和上面的元素相关联
+        Vue.createApp(Counter).mount('#counter')//创建应用，将配置对象传入 Vue自动解析  返回了一个代理对象
+        //数据双向绑定 如果JS修改 页面也会动态变动
+        //npm init vite@latest 项目名称 -- --template vue  
+    </script>
+</body>
+</html>
